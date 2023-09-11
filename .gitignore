@@ -1,0 +1,6 @@
+# ignoring OS stuff
+.DS_Store
+
+#project modules
+node_modules
+.env
