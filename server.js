@@ -21,6 +21,15 @@ db.once('open', () => {
   console.log('Connected to MongoDB');
 });
 
+
+const userRoutes = require('./routes/user-routes');
+const thoughtRoutes = require('./routes/thought-routes');
+const reactionRoutes = require('./routes/reaction-routes');
+
+app.use('/api/users', userRoutes);
+app.use('/api/thoughts', thoughtRoutes);
+app.use('/api/thoughts/:thoughtId/reactions', reactionRoutes);
+
 // Start the server
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
