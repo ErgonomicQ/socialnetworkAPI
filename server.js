@@ -1,9 +1,13 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+ // Insert the seed data into the database
+ const User = require('./models/User'); 
+ const Thought = require('./models/Thoughts'); 
+ const seeds = require('./seeds.json'); 
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3001;
 
 app.use(bodyParser.json());
 
@@ -18,6 +22,32 @@ const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 db.once('open', () => {
   console.log('Connected to MongoDB');
+
+  
+  mongoose.connection.db.collection('users').drop()
+    .then(() => {
+      console.log('Users collection dropped');
+
+     
+      return mongoose.connection.db.collection('thoughts').drop();
+    })
+    .then(() => {
+      console.log('Thoughts collection dropped');
+
+      
+      return Promise.all([
+        User.insertMany(seeds.users),
+        Thought.insertMany(seeds.thoughts)
+      ]);
+    })
+    .then(() => {
+      console.log('Data seeded successfully');
+      mongoose.connection.close(); 
+    })
+    .catch((err) => {
+      console.error('Error seeding data:', err);
+      mongoose.connection.close();
+    });
 });
 
 

@@ -1,6 +1,6 @@
 const Thought = require('../models/Thoughts');
 
-// controllers/intrusiveThoughts.js
+
 
 
 const thoughtController = {
