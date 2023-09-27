@@ -8,10 +8,9 @@ const port = process.env.PORT || 3000;
 app.use(bodyParser.json());
 
 // MongoDB connection
-mongoose.connect('mongodb://localhost/social-network', {
+mongoose.connect('mongodb://127.0.0.1:27017/social-network', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-  useCreateIndex: true,
 });
 
 const db = mongoose.connection;
@@ -23,8 +22,8 @@ db.once('open', () => {
 
 
 const userRoutes = require('./routes/user-routes');
-const thoughtRoutes = require('./routes/thought-routes');
-const reactionRoutes = require('./routes/reaction-routes');
+const thoughtRoutes = require('./routes/thought-route');
+const reactionRoutes = require('./routes/reactions-route');
 
 app.use('/api/users', userRoutes);
 app.use('/api/thoughts', thoughtRoutes);

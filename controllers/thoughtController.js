@@ -1,5 +1,7 @@
-// controllers/thought-controller.js
-const { Thought, User } = require('../models');
+const Thought = require('../models/Thoughts');
+
+// controllers/intrusiveThoughts.js
+
 
 const thoughtController = {
   getAllThoughts: async (req, res) => {
