@@ -28,9 +28,6 @@ const userSchema = new Schema({
   ],
 });
 
-// Define indexes for username and email fields
-userSchema.index({ username: 1 }, { unique: true });
-userSchema.index({ email: 1 }, { unique: true });
 
 userSchema.virtual('friendCount').get(function () {
   return this.friends.length;

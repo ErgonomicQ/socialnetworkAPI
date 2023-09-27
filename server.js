@@ -42,11 +42,11 @@ db.once('open', () => {
     })
     .then(() => {
       console.log('Data seeded successfully');
-      mongoose.connection.close(); 
+      
     })
     .catch((err) => {
       console.error('Error seeding data:', err);
-      mongoose.connection.close();
+      
     });
 });
 
