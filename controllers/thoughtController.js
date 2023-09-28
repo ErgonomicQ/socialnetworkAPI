@@ -1,5 +1,5 @@
 const Thought = require('../models/Thoughts');
-
+const User = require('../models/User')
 
 
 
@@ -104,6 +104,7 @@ const thoughtController = {
 
       // Find the thought by its ID
       const thought = await Thought.findById(thoughtId);
+     
 
       if (!thought) {
         return res.status(404).json({ message: 'Thought not found' });

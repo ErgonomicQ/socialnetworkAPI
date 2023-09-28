@@ -53,11 +53,11 @@ db.once('open', () => {
 
 const userRoutes = require('./routes/user-routes');
 const thoughtRoutes = require('./routes/thought-route');
-const reactionRoutes = require('./routes/reactions-route');
+
 
 app.use('/api/users', userRoutes);
 app.use('/api/thoughts', thoughtRoutes);
-app.use('/api/thoughts/:thoughtId/reactions', reactionRoutes);
+
 
 // Start the server
 app.listen(port, () => {
