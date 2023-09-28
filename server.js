@@ -37,7 +37,7 @@ db.once('open', () => {
       
       return Promise.all([
         User.insertMany(seeds.users),
-        Thought.insertMany(seeds.thoughts)
+        Thought.insertMany(seeds.thoughts),
       ]);
     })
     .then(() => {
