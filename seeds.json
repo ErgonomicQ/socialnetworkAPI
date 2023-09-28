@@ -1,60 +1,60 @@
 {
-    "users": [
-      {
-        "username": "alice",
-        "email": "alice@example.com"
-      },
-      {
-        "username": "bob",
-        "email": "bob@example.com"
-      },
-      {
-        "username": "charlie",
-        "email": "charlie@example.com"
-      }
-    ],
-    "thoughts": [
-      {
-        "thoughtText": "Hello, world!",
-        "username": "alice",
-        "reactions": []
-      },
-      {
-        "thoughtText": "I love coding.",
-        "username": "bob",
-        "reactions": []
-      },
-      {
-        "thoughtText": "Coffee is life.",
-        "username": "charlie",
-        "reactions": []
-      }
-    ],
-    "reactions": [
-      {
-        "reactionBody": "👍",
-        "username": "bob"
-      },
-      {
-        "reactionBody": "😄",
-        "username": "charlie"
-      },
-      {
-        "reactionBody": "❤️",
-        "username": "alice"
-      },
-      {
-        "reactionBody": "😕",
-        "username": "alice"
-      },
-      {
-        "reactionBody": "👏",
-        "username": "bob"
-      },
-      {
-        "reactionBody": "😢",
-        "username": "charlie"
-      }
-    ]
-  }
-  
+  "users": [
+    {
+      "username": "alice",
+      "email": "alice@example.com"
+    },
+    {
+      "username": "bob",
+      "email": "bob@example.com"
+    },
+    {
+      "username": "charlie",
+      "email": "charlie@example.com"
+    }
+  ],
+  "thoughts": [
+    {
+      "thoughtText": "Hello, world!",
+      "username": "alice",
+      "reactions": [
+        {
+          "reactionBody": "👍",
+          "username": "bob"
+        },
+        {
+          "reactionBody": "❤️",
+          "username": "alice"
+        }
+      ]
+    },
+    {
+      "thoughtText": "I love coding.",
+      "username": "bob",
+      "reactions": [
+        {
+          "reactionBody": "😄",
+          "username": "charlie"
+        },
+        {
+          "reactionBody": "👏",
+          "username": "bob"
+        }
+      ]
+    },
+    {
+      "thoughtText": "Coffee is life.",
+      "username": "charlie",
+      "reactions": [
+        {
+          "reactionBody": "😕",
+          "username": "alice"
+        },
+        {
+          "reactionBody": "😢",
+          "username": "charlie"
+        }
+      ]
+    }
+  ]
+}
